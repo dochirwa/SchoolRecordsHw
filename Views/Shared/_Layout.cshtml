@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .first-color {
+            background: #394a51;
+        }
+
+        .second-color {
+            background: #7fa99b;
+        }
+
+        .third-color {
+            background: #fbf2d5;
+        }
+
+        .fourth-color {
+            color: #fdc57b;
+        }
+    </style>
+</head>
+<body class="third-color">
+    <div class="container-fluid py-2 first-color"></div>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm second-color bg-opacity-25">
+        <div class="container">
+            <div class="bold">
+                <i class="fourth-color fa-solid fa-book fa-2x mx-4"></i><b class="display-6 fourth-color">Records</b>
+            </div>
+            <header class="d-flex justify-content-center py-3">
+                <ul class="nav nav-pills">
+                    <li>@Html.ActionLink("Home", "school_Records", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                </ul>
+            </header>
+        </div>
+    </nav>
+    <div class="container py-4 body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Dunwoody College School Records</p>
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/92e37675b9.js" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
